@@ -27,7 +27,7 @@ def argsparser():
         default=None,
         help=("Directory include:'model.pdiparams', 'model.pdmodel', "
               "'infer_cfg.yml', created by tools/export_model.py."),
-        required=True)
+        required=False)
     parser.add_argument(
         "--image_file", type=str, default=None, help="Path of image file.")
     parser.add_argument(
