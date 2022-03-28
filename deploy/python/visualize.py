@@ -149,9 +149,9 @@ def draw_box(im, np_boxes, labels, threshold=0.5):
 
         if len(bbox) == 4:
             xmin, ymin, xmax, ymax = bbox
-            print('class_id:{:d}, confidence:{:.4f}, left_top:[{:.2f},{:.2f}],'
-                  'right_bottom:[{:.2f},{:.2f}]'.format(
-                      int(clsid), score, xmin, ymin, xmax, ymax))
+            # print('class_id:{:d}, confidence:{:.4f}, left_top:[{:.2f},{:.2f}],'
+            #       'right_bottom:[{:.2f},{:.2f}]'.format(
+            #           int(clsid), score, xmin, ymin, xmax, ymax))
             # draw bbox
             draw.line(
                 [(xmin, ymin), (xmin, ymax), (xmax, ymax), (xmax, ymin),
