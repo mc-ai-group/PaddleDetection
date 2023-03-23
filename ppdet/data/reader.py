@@ -171,6 +171,7 @@ class BaseDataLoader(object):
                 self.dataset,
                 batch_size=self.batch_size,
                 shuffle=self.shuffle,
+                num_replicas=int(os.getenv("MC_PADDLE_DETECTION_NUM_REPLICAS", 1))
                 drop_last=self.drop_last)
         else:
             self._batch_sampler = batch_sampler
