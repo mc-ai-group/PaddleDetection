@@ -1213,13 +1213,15 @@ class Trainer(object):
             self.model.__delattr__('aux_head')
         self.model.eval()
 
-        model_name = os.path.splitext(os.path.split(self.cfg.filename)[-1])[0]
+        # model_name = os.path.splitext(os.path.split(self.cfg.filename)[-1])[0]
         if for_fd:
             save_dir = output_dir
             save_name = 'inference'
             yaml_name = 'inference.yml'
         else:
-            save_dir = os.path.join(output_dir, model_name)
+            # 不创建子文件夹, 直接保存在output_dir下
+            # save_dir = os.path.join(output_dir, model_name)
+            save_dir = output_dir
             save_name = 'model'
             yaml_name = None
 
