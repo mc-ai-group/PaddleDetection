@@ -1279,13 +1279,15 @@ class Trainer(object):
         for layer in model.sublayers(include_self=True):
             layer.export_mode = True
 
-        model_name = os.path.splitext(os.path.split(self.cfg.filename)[-1])[0]
+        # model_name = os.path.splitext(os.path.split(self.cfg.filename)[-1])[0]
         if for_fd:
             save_dir = output_dir
             save_name = 'inference'
             yaml_name = 'inference.yml'
         else:
-            save_dir = os.path.join(output_dir, model_name)
+            # 不创建子文件夹, 直接保存在output_dir下
+            # save_dir = os.path.join(output_dir, model_name)
+            save_dir = output_dir
             save_name = 'model'
             yaml_name = None
 
