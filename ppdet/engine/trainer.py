@@ -638,8 +638,11 @@ class Trainer(object):
 
     def export(self, output_dir='output_inference'):
         self.model.eval()
-        model_name = os.path.splitext(os.path.split(self.cfg.filename)[-1])[0]
-        save_dir = os.path.join(output_dir, model_name)
+
+        # 2025-01-06: 这里会自动给模型输出文件夹加一层子文件夹, 并无必要, 故去掉
+        # model_name = os.path.splitext(os.path.split(self.cfg.filename)[-1])[0]
+        # save_dir = os.path.join(output_dir, model_name)
+        save_dir = output_dir
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
 
