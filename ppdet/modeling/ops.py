@@ -691,7 +691,7 @@ def matrix_nms(bboxes,
     check_type(background_label, 'background_label', int, 'matrix_nms')
 
     if HAVE_PIR and in_dynamic_or_pir_mode():
-        attrs = (score_threshold, post_threshold, nms_top_k, keep_top_k,
+        attrs = (score_threshold, nms_top_k, keep_top_k, post_threshold,
                  use_gaussian, gaussian_sigma, background_label, normalized)
         out, index, rois_num = paddle._C_ops.matrix_nms(bboxes, scores, *attrs)
         if not return_index:
